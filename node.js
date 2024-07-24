@@ -4,7 +4,7 @@ const { GPT } = require('gpt-3');
 
 const app = express();
 const gpt = new GPT({
-    apiKey: 'sk-None-RL6s7W7212AKxfLaB2DnT3BlbkFJSsjhlLe98PIzJcMgKDV2', // Replace with your OpenAI API key
+    apiKey: 'sk-None-RL6s7W7212AKxfLaB2DnT3BlbkFJSsjhlLe98PIzJcMgKDV', // Replace with your OpenAI API key
     model: 'text-davinci-003', // Adjust model as needed
 });
 
