@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attack Strategies - MalGenAI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <div class="container mx-auto p-12">
+        <h1 class="text-center text-4xl font-bold text-orange-500 mb-8">Attack Strategies</h1>
+        <p class="text-center text-lg mb-10 text-yellow-300">This section explores various cyber attack strategies using generative models.</p>
+
+        <!-- Prompt-Based Attack Generator -->
+<div class="bg-red-600 p-8 rounded-2xl shadow-lg mb-12">
+    <h2 class="text-yellow-200 text-2xl font-bold mb-4">Prompt-Based Attack Generator</h2>
+    <input type="text" id="userInput" placeholder="Enter attack type..." 
+        class="w-full p-4 rounded-lg bg-black text-yellow-400 placeholder-yellow-200 mb-4 border-2 border-orange-500 focus:outline-none">
+    
+    <div class="flex items-center space-x-4 mb-4">
+        <input type="checkbox" class="h-6 w-6" id="predefinedPrompt">
+        <label for="predefinedPrompt" class="text-yellow-200">Use Predefined Prompt</label>
+    </div>
+
+    <button id="submitButton" class="w-full py-3 bg-orange-500 hover:bg-orange-400 text-black font-bold rounded-lg">
+        Submit
+    </button>
+</div>
+
+<!-- Remote Code Execution (RCE) Generator -->
+<div class="bg-red-600 p-8 rounded-2xl shadow-lg mb-12">
+    <h2 class="text-yellow-200 text-2xl font-bold mb-4">Remote Code Execution (RCE) Generator</h2>
+    <input type="text" id="ipInput" placeholder="IP Address" 
+        class="w-full p-4 rounded-lg bg-black text-yellow-400 placeholder-yellow-200 mb-4 border-2 border-orange-500 focus:outline-none">
+    <input type="text" id="portInput" placeholder="Enter Port No:" 
+        class="w-full p-4 rounded-lg bg-black text-yellow-400 placeholder-yellow-200 mb-4 border-2 border-orange-500 focus:outline-none">
+    
+    <button id="rceButton" class="w-full py-3 bg-orange-500 hover:bg-orange-400 text-black font-bold rounded-lg">
+        Submit
+    </button>
+</div>
+
+
+
+        <!-- Generated Response Section -->
+        <div id="responseSection" class="mt-8 bg-gray-800 p-6 rounded-2xl shadow-lg hidden">
+            <h3 class="text-xl font-bold text-green-300">Generated Response:</h3>
+            <p id="responseText" class="text-yellow-200 mt-4"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('submitButton').addEventListener('click', function() {
+            const userInput = document.getElementById('userInput').value;
+            const responseText = document.getElementById('responseText');
+            const responseSection = document.getElementById('responseSection');
+
+            if (userInput.trim() !== '') {
+                // Prepare the payload
+                const payload = {
+                    attack_type: userInput.trim()
+                };
+
+                // Send request to Flask backend
+                fetch('http://127.0.0.1:5000/generate_attack', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Display the response from Flask
+                    responseText.textContent = data.response;
+
+                    // Show the response section
+                    responseSection.classList.remove('hidden');
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    responseText.textContent = 'Failed to generate response';
+                    responseSection.classList.remove('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
