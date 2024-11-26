@@ -1,0 +1,54 @@
+Subject: URGENT! Your PayPal Account Has Been Compromised!
+
+Dear Valued User,
+
+We have detected suspicious activity on your PayPal account. To avoid permanent suspension, please verify your account immediately by clicking the link below:
+[Suspicious Link]
+
+Failure to verify within 24 hours will result in a locked account.
+
+Best regards,
+PayPal Support Team
+
+
+
+Subject: Immediate Action Required – Your Bank Account Is At Risk!
+
+Dear [Name],
+
+We have detected unauthorized attempts to access your bank account. Please click the link below to verify your identity and protect your account:
+[Suspicious Link]
+
+Your prompt attention to this matter is crucial to avoid account suspension.
+
+Regards,
+Bank Security Team
+
+
+
+Subject: Congratulations! You’ve Won a $500 Gift Card!
+
+Hi [Name],
+
+You’ve been selected as the winner of a $500 gift card! All you need to do is provide your personal information and shipping address to claim your prize:
+[Suspicious Link]
+
+Act quickly! This offer expires in 24 hours.
+
+Sincerely,
+The Gift Card Team
+
+
+
+Subject: Your Amazon Account Has Been Suspended!
+
+Dear User,
+
+We’ve noticed suspicious activity on your Amazon account. To prevent it from being permanently suspended, you must confirm your identity by logging into your account here:
+[Suspicious Link]
+
+Don’t wait! Act now to secure your account.
+
+Regards,
+Amazon Customer Support
+

@@ -3,28 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Defense Strategies - MalGenAI</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Phishing Detection</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(/frontend/static/tell.jpg);
+    background-color: #0f0f0f;
+    font-size: 30px; /* Increased base font size */
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 100vh; /* Full viewport height */
+    text-align: center;
+}
+
+.container {
+    width: 200%;
+    max-width: 800px; /* Limits the width of the container */
+    padding: 20px;
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    margin-top: 50px; /* Optional: Add top margin if needed */
+}
+
+        
+
+        h1 {
+            color: #FF0000;
+            font-size: 36px; /* Increased font size for the main heading */
+            margin-bottom: 20px;
+        }
+
+        .email-input {
+            width: 100%;
+            padding: 12px;
+            margin: 15px 0;
+            border: 1px solid #df8484;
+            border-radius: 5px;
+            font-size: 16px; /* Increased font size for input text */
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #FF0000; /* Red background */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px; /* Increased font size for the button text */
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #FFDD00; /* Yellow background on hover */
+            box-shadow: 0 0 10px rgba(255, 221, 0, 0.5); /* Yellow glow effect */
+        }
+
+        .result {
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #cfcfd6;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .phishing {
+            color: red;
+            font-weight: bold;
+            font-size: 20px; /* Increased font size for phishing result */
+        }
+
+        .legitimate {
+            color: green;
+            font-weight: bold;
+            font-size: 20px; /* Increased font size for legitimate result */
+        }
+
+        .highlighted {
+            color: red;
+            font-weight: bold;
+        }
+
+        .info-section {
+            margin-bottom: 40px;
+        }
+
+        .info-section h3 {
+            color: #FF0000;
+            font-size: 24px; /* Increased font size for section headings */
+        }
+
+        .info-section p {
+            color: #27d149;
+            font-size: 18px; /* Increased font size for paragraph text */
+            line-height: 1.8;
+        }
+
+        ul {
+            padding-left: 25px;
+            color: #ebe6e2;
+            font-size: 20px; /* Increased font size for list items */
+        }
+
+        li {
+            margin-bottom: 20px;
+        }
+
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>Defense Strategies</h1>
-        <p>Explore how AI and generative models can be used to defend against cyber threats and mitigate risks.</p>
-        
-        <section>
-            <h2>1. Automated Defense Mechanisms</h2>
-            <p>Generative models can be used to automatically generate defense strategies, such as security patches, firewalls, and intrusion detection systems, based on attack patterns.</p>
-        </section>
-        
-        <section>
-            <h2>2. Intrusion Detection Systems</h2>
-            <p>AI models can learn from vast datasets of cyber attacks to identify patterns and anomalies in network traffic, helping to detect and block unauthorized access attempts in real-time.</p>
-        </section>
 
-        <section>
-            <h2>3. Threat Intelligence Sharing</h2>
-            <p>By using generative models, organizations can create and share threat intelligence in an automated manner, making it easier to detect and respond to emerging threats.</p>
-        </section>
+        <h1>Phishing Email Detection</h1>
+
+
+
+        <!-- Phishing Info Section -->
+        <div class="info-section">
+            <h3>What is Phishing?</h3>
+            <p>Phishing is a fraudulent attempt to obtain sensitive information such as usernames, passwords, or credit card details by pretending to be a trustworthy entity. Typically, phishing occurs through email or fake websites designed to look like legitimate ones.</p>
+
+            <h3>How to Recognize Phishing Emails:</h3>
+            <ul>
+                <li>Suspicious sender: The email may come from an address that looks similar to a legitimate one, but with slight variations.</li>
+                <li>Urgency or threat: Phishing emails often create a sense of urgency, like claiming your account is compromised or threatening legal action.</li>
+                <li>Unusual requests: Be cautious of emails asking you to click on a link, download attachments, or provide sensitive information.</li>
+                <li>Strange or incorrect language: Phishing emails often contain poor grammar, awkward phrasing, or spelling mistakes.</li>
+                <li>Links and attachments: Hover over links to check if the URL matches the legitimate site and avoid opening unexpected attachments.</li>
+            </ul>
+
+            <p>Use the form below to paste any email you received, and we will help you determine whether it is a phishing attempt.</p>
+        </div>
+
+        <!-- Email Detection Form -->
+        <form method="POST" action="/predict">
+            <textarea name="email" class="email-input" rows="6" placeholder="Paste your email here"></textarea>
+            <button type="submit" class="submit-btn">Check for Phishing</button>
+        </form>
+
+        <!-- Result Section -->
+        {% if prediction %}
+            <div class="result">
+                <h3>Email Prediction:</h3>
+                <p class="{{ prediction | lower }}">{{ prediction }}</p>
+                <h4>Email Preview:</h4>
+                <div>
+                    <!-- Render the highlighted email content safely -->
+                    {{ email | safe }}
+                </div>
+            </div>
+        {% endif %}
     </div>
 </body>
 </html>

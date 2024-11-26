@@ -1,0 +1,55 @@
+Subject: Welcome to Google!
+
+Hello [Name],
+
+Thank you for signing up with Google! We're excited to have you on board. Here’s a quick guide to help you get started:
+[Getting Started Link]
+
+If you have any questions, feel free to visit our Help Center.
+
+Best wishes,
+The Google Team
+
+
+Subject: Your Amazon Order Has Been Shipped!
+
+Dear [Name],
+
+We are happy to inform you that your Amazon order #123456 has been shipped. You can track your package here:
+[Tracking URL]
+
+Thank you for shopping with us!
+
+Best regards,
+Amazon Customer Service
+
+
+Subject: Your Recent Purchase from PayPal
+
+Hello [Name],
+
+Thank you for your recent purchase of [Product Name]. Your payment of $50.00 has been processed successfully.
+
+You can view your transaction history here: [Transaction Link]
+
+If you need any assistance, our customer support team is available 24/7.
+
+Regards,
+PayPal Support Team
+
+
+
+Subject: Invoice for Your Subscription to Netflix
+
+Hi [Name],
+
+Here’s your invoice for the monthly subscription to Netflix. Your total for this month is $15.99.
+
+You can view your invoice and manage your account here: [Invoice Link]
+
+Thank you for being a Netflix member!
+
+Sincerely,
+Netflix Customer Service
+
+

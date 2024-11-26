@@ -3,31 +3,54 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: black;  /* Black background for the whole body */
-    color: yellow;  /* Default text color */
+    background-image: url('1.png');
+    background-color: #0c0b0c;  /* Light background for the body */
+    color: #302f2f;  /* Gold text for contrast */
 }
 
 h1 {
     text-align: center;
     margin-bottom: 30px;
-    color: #f55524;  /* Bright color for the main heading */
+    color: #48ff00;  /* Bright orange for the main heading */
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* Container for overall layout */
 .container {
-    width: 80%;
+    width: 85%;
     margin: auto;
-    padding: 80px;  /* Increased padding for better spacing */
+    padding: 50px;  /* Moderate padding for a clean look */
 }
+
+img {
+    width: 100%; /* Make the image responsive by setting its width to 100% */
+    max-width: 1700px; /* Set the maximum width of the image to 1700px */
+    height: auto; /* Maintain the aspect ratio of the image */
+    display: block; /* Ensures the image behaves as a block element, not inline */
+    margin: 0 auto; /* Centers the image horizontally */
+    margin-top: 20%;
+}
+
 
 /* Input Section Styles */
 .input-section {
-    background-color: #cc261a;  /* Red background for the input section */
+    background-color: #cc261a;  /* Deep red background */
     color: yellow;
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
     margin-bottom: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+h2{
+    color: #fdf6f6;
 }
 
 .input-section input {
@@ -35,62 +58,77 @@ h1 {
     padding: 12px;
     margin: 10px 0;
     border-radius: 10px;
-    border: 1px solid #f55524;  /* Orange-red border */
+    border: 1px solid #f55524;
     background-color: black;
     color: yellow;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
 }
 
-.checkbox-section {
-    margin-top: 10px;
-}
-
-.checkbox-section input {
-    margin-right: 10px;
+.input-section input:focus {
+    border-color: #FFD700;  /* Gold border on focus */
 }
 
 /* Button Styles */
 button {
     padding: 12px 20px;
-    background-color: #f55524;  /* Orange-red background */
-    color: #fff;
+    background-color: #e0d3ce;  /* Vibrant orange */
+    color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     margin-top: 10px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #cc261a;  /* Darker shade of red when hovered */
+    background-color: #FF6347;  /* Lighter orange when hovered */
 }
 
 /* Response Section Styles */
 .response-section {
     margin-top: 20px;
-    background-color: #e6510d;  /* Orange background for the response section */
+    background-color: #e6510d;  /* Warm orange */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .response-section h2 {
-    color: #c4eb19;  /* Light green text for response title */
+    color: #00FF00;  /* Bright green for response title */
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
-/* Card Container for multiple cards */
+/* Card Container for multiple cards - UPDATED to horizontal layout */
 .card-container {
     display: flex;
-    justify-content: space-between;
-    gap: 50px;
+    justify-content: space-between;  /* Distribute cards evenly */
+    gap: 30px;  /* Space between the cards */
+    margin-top: 50px;
 }
 
+/* Card Styles */
 .card {
-    background-color: #cc261a;  /* Red background */
-    padding: 150px;  /* Increased padding for larger size */
-    width: 40%;  /* Increased card width */
-    border-radius: 50px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #1f1b1a;
+    padding: 50px;
+    width: 30%;  /* Set a fixed width for each card */
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
     text-align: center;
-    color: yellow;  /* Yellow text */
+    color: rgb(39, 39, 37);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.element {
+    -webkit-box-shadow: 2px 2px 2px 2px rgba(84, 115, 125, 1);
+    box-shadow: 2px 2px 2px 2px rgba(84, 115, 125, 1);
+  }
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
 }
 
 .card a {
@@ -99,36 +137,18 @@ button:hover {
 }
 
 .card h2 {
-    color: rgb(81, 255, 0);  /* Bright green for the card titles */
+    color: rgb(0, 255, 136);  /* Bright green */
+    font-size: 2rem;
+    margin-bottom: 15px;
 }
 
 .card p {
-    color: yellow;  /* Yellow text for the card description */
-}
-
-/* Additional Section Styling */
-section {
-    margin-top: 20px;
-    background-color: #e6510d;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    color: #c4eb19;  /* Light green for section titles */
+    color: yellow;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
 }
 
 /* General Card Styles */
-.card {
-    perspective: 1000px;
-    margin-bottom: 2rem;
-    border-radius: 1rem;
-    overflow: hidden;
-    transition: transform 0.6s ease-in-out;
-    position: relative;
-}
-
 .card-inner {
     position: relative;
     width: 100%;
@@ -147,25 +167,20 @@ h2 {
     height: 100%;
     backface-visibility: hidden;
     border-radius: 1rem;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Front Side of the Card */
 .card-front {
-    background: linear-gradient(to right, #FF4500, #FF6347);
+    background: linear-gradient(to right, #FF4500, #FF6347); /* Gradient from red to orange */
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 2rem;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
 }
 
-/* Back Side of the Card */
 .card-back {
-    background: linear-gradient(to right, #4B0082, #8A2BE2);
+    background: linear-gradient(to right, #4B0082, #8A2BE2); /* Gradient from purple to blue */
     color: #FFD700;
     transform: rotateY(180deg);
     display: flex;
@@ -173,15 +188,13 @@ h2 {
     justify-content: center;
     align-items: center;
     padding: 2rem;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
 }
 
 /* Buttons Inside the Cards */
 .card-button {
     margin-top: 1rem;
     padding: 0.75rem 1.5rem;
-    background-color: #FF8C00;
+    background-color: #FF8C00;  /* Orange button */
     border: none;
     color: black;
     font-weight: bold;
@@ -191,15 +204,15 @@ h2 {
 }
 
 .card-button:hover {
-    background-color: #FFD700;
+    background-color: #FFD700;  /* Gold button on hover */
 }
 
-/* Input Fields */
+/* Input Fields Inside Cards */
 .card-input {
     width: 100%;
     padding: 0.75rem;
     margin: 0.5rem 0;
-    border: 2px solid #FFA500;
+    border: 2px solid #FF4500;  /* Orange border */
     background-color: #1A1A1A;
     color: #FFD700;
     border-radius: 0.5rem;
@@ -214,10 +227,10 @@ h2 {
 /* Response Section Styling */
 #responseSection {
     background-color: #1A1A1A;
-    border: 2px solid #FFA500;
+    border: 2px solid #FF4500;
     border-radius: 1rem;
     padding: 1.5rem;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
 }
 
 #responseSection h3 {
@@ -229,4 +242,8 @@ h2 {
     margin-top: 1rem;
     color: #FFD700;
     font-size: 1.2rem;
+}
+
+p{
+    color: #cef054;
 }

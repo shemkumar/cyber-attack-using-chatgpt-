@@ -1,0 +1,138 @@
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #111010;
+    background-size: cover;  /* Ensures the image covers the whole background */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Makes the background fixed when scrolling */
+    color: #333;
+}
+
+/* Header */
+header {
+    text-align: center;
+    background: #222;
+    color: #df0f0f;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #51df0f;
+}
+
+header .tagline {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #23af00;
+}
+
+/* Main */
+main {
+    padding: 20px;
+}
+
+/* Upload Section */
+.upload-section {
+    background: #cdcfd8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.upload-section h2 {
+    margin-bottom: 10px;
+}
+
+.upload-section p {
+    margin-bottom: 20px;
+}
+
+.upload-form input[type="file"] {
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.upload-form button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #181a18;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Features Section */
+.features {
+    margin-top: 50px;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: red;
+}
+
+.feature-grid {
+    display: grid;
+    background-color: #380808;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: #141414;
+    padding: 30px;
+    border-radius: px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 85%;
+    margin: auto;
+    padding: 50px;  /
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card img {
+        width: 100%; /* Make the image responsive by setting its width to 100% */
+        max-width: 1700px; /* Set the maximum width of the image to 1700px */
+        height: auto; /* Maintain the aspect ratio of the image */
+        display: block; /* Ensures the image behaves as a block element, not inline */
+        margin: 10 auto; /* Centers the image horizontally */
+        margin-top: 20%;
+    
+}
+
+
+
+.feature-card h3 {
+    margin-top: 0;
+    color: #ff0080;
+}
+
+.feature-card p{
+    color: #eaf1ea;
+}
+
+h2{
+    color: red;
+}
